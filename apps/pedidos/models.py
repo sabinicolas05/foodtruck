@@ -19,11 +19,17 @@ class Pedido(models.Model):
         ('no', 'No')   
     ]
 
+    ESTADO_CHOICES = [
+        ('en espera', 'En Espera'),  
+        ('en preparacion', 'En Preparación'),
+        ('terminado', 'Terminado'),
+    ]
 
-
+  
     observaciones = models.CharField(max_length=50, choices=OBSERVACIONES_CHOICES,default='con todas las salsas')
     cantidad = models.PositiveIntegerField(default=0)  
-    parallevar = models.CharField(max_length=50, choices=PARALLEVAR_CHOICES, default='no')    
+    parallevar = models.CharField(max_length=50, choices=PARALLEVAR_CHOICES, default='no')  
+    estado = models.CharField(max_length=50, choices=ESTADO_CHOICES, default='en espera')  
     nombre_cliente = models.CharField(max_length=50, default='Cliente Anónimo')
 
     def __str__(self):
