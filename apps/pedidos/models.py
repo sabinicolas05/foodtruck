@@ -1,16 +1,6 @@
 from django.db import models
 
 class Pedido(models.Model):
-    PRODUCTO_CHOICES = [
-        ('hamburguesa', 'Hamburguesa'),
-        ('hotdog', 'Hot Dog'),
-        ('taco', 'Taco'),
-        ('enchiladas', 'Enchiladas'),  
-        ('sandwich qbano', 'Sandwich Qbano'), 
-        ('burritos', 'Burritos'),  
-        ('arepa rellena', 'Arepa Rellena'),  
-        
-    ]
 
     OBSERVACIONES_CHOICES = [
         ('sin salsas', 'Sin Salsas'),
@@ -29,17 +19,11 @@ class Pedido(models.Model):
         ('no', 'No')   
     ]
 
-    ESTADO_CHOICES = [
-        ('en espera', 'En Espera'),  
-        ('en preparacion', 'En Preparación'),
-        ('terminado', 'Terminado'),
-    ]
 
-    producto = models.CharField(max_length=50, choices=PRODUCTO_CHOICES, default='hamburguesa')
+
     observaciones = models.CharField(max_length=50, choices=OBSERVACIONES_CHOICES,default='con todas las salsas')
     cantidad = models.PositiveIntegerField(default=0)  
-    parallevar = models.CharField(max_length=50, choices=PARALLEVAR_CHOICES, default='no')  
-    estado = models.CharField(max_length=50, choices=ESTADO_CHOICES, default='en espera')  
+    parallevar = models.CharField(max_length=50, choices=PARALLEVAR_CHOICES, default='no')    
     nombre_cliente = models.CharField(max_length=50, default='Cliente Anónimo')
 
     def __str__(self):
