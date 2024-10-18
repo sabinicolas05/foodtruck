@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.detalles',
     'apps.productos',
     'apps.factura',
+    'apps.preparacion',
     'corsheaders',
 ]
 
