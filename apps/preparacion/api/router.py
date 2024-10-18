@@ -1,5 +1,5 @@
 from rest_framework.routers import DefaultRouter
-from apps.preparacion.api.views import zonaPreparacionModelViewSet
+from apps.preparacion.api.views import PreparacionModelViewSet
 
 router_preparacion = DefaultRouter()
-router_preparacion.register(prefix="zona_preparacion",basename="zona_preparacion",viewset=zonaPreparacionModelViewSet)
+router_preparacion.register(prefix="preparacion",basename="preparacion",viewset=PreparacionModelViewSet)

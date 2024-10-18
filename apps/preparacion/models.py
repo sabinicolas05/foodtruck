@@ -4,7 +4,7 @@ from apps.productos.models import Producto
 from apps.detalles.models import DetallePedido
 
 # Create your models here.
-class ZonaPreparacion(models.Model):
+class Preparacion(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.SET_NULL, null=True)
     producto = models.ForeignKey(Producto, on_delete=models.SET_NULL, null=True)
     cantidad = models.ForeignKey(DetallePedido, on_delete=models.SET_NULL, null=True)

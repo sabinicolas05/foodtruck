@@ -1,7 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
-from apps.preparacion.models import ZonaPreparacion
-from apps.preparacion.api.serializers import zonaPreparacionSerializer
+from apps.preparacion.models import Preparacion
+from apps.preparacion.api.serializers import PreparacionSerializer
+from apps.preparacion.api.permissions import IsAdminOrReadOnly
 
-class zonaPreparacionModelViewSet(ModelViewSet):
-    serializer_class= zonaPreparacionSerializer
-    queryset = ZonaPreparacion.objects.all()
+class PreparacionModelViewSet(ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]
+    serializer_class= PreparacionSerializer
+    queryset = Preparacion.objects.all()

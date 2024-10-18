@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from apps.preparacion.models import ZonaPreparacion
+from apps.preparacion.models import Preparacion
 
-class zonaPreparacionSerializer(ModelSerializer):
+class PreparacionSerializer(ModelSerializer):
     class Meta:
-        model = ZonaPreparacion
+        model = Preparacion
         fields = '__all__'
